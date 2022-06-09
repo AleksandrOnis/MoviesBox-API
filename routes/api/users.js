@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.get("/current", authenticate, async (req, res, next) => {
   res.json({
+    name: req.user.name,
     email: req.user.email,
   });
 });

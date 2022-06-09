@@ -9,7 +9,6 @@ const router = express.Router();
 
 const { SECRET_KEY } = process.env;
 
-// /signup
 router.post("/signup", async (req, res, next) => {
   try {
     const { error } = schemas.signup.validate(req.body);
@@ -26,6 +25,7 @@ router.post("/signup", async (req, res, next) => {
     await User.create({ name, email, password: hashPassword });
     res.status(201).json({
       user: {
+        name,
         email,
       },
     });
@@ -34,14 +34,13 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-// /signin
 router.post("/signin", async (req, res, next) => {
   try {
     const { error } = schemas.signup.validate(req.body);
     if (error) {
       throw new createError(400, error.message);
     }
-    const { email, password } = req.body;
+    const { email, password, name } = req.body;
     const user = await User.findOne({ email });
     if (!user) {
       throw new createError(401, "Email or password is wrong");
@@ -59,6 +58,7 @@ router.post("/signin", async (req, res, next) => {
       token,
       user: {
         email,
+        name,
       },
     });
   } catch (error) {
