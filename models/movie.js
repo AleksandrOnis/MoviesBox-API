@@ -11,8 +11,8 @@ const movieSchema = Schema(
       type: String,
       default: "",
     },
-    //genre_ids: (4) [28, 12, 10751, 35]
-    genresIds: {
+
+    genres_ids: {
       type: [Number],
       default: [],
     },
@@ -45,7 +45,7 @@ const movieSchema = Schema(
 const joiAddMovieSchema = Joi.object({
   title: Joi.string(),
   poster_path: Joi.string(),
-  genresIds: Joi.array().items(Joi.number()),
+  genres_ids: Joi.array().items(Joi.number()),
   release_date: Joi.string(),
   vote_average: Joi.string(),
   id: Joi.string().required(),

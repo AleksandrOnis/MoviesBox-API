@@ -1,21 +1,12 @@
 const express = require("express");
 
-const { User } = require("../../models/user");
+const ctrl = require("../../controllers/users");
 const { authenticate } = require("../../middlewares");
 
 const router = express.Router();
 
-router.get("/current", authenticate, async (req, res, next) => {
-  res.json({
-    name: req.user.name,
-    email: req.user.email,
-  });
-});
+router.get("/current", authenticate, ctrl.current);
 
-router.get("/logout", authenticate, async (req, res, next) => {
-  const { _id } = req.user;
-  await User.findByIdAndUpdate(_id, { token: "" });
-  res.status(204).send();
-});
+router.get("/logout", authenticate, ctrl.logout);
 
 module.exports = router;
