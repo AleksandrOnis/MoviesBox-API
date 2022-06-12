@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AleksandrOnis/proj-node-films.git"
+    "url": "git+https://github.com/AleksandrOnis/MoviesBox-API.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AleksandrOnis/proj-node-films/issues"
+    "url": "https://github.com/AleksandrOnis/MoviesBox-API/issues"
   },
-  "homepage": "https://github.com/AleksandrOnis/proj-node-films#readme",
+  "homepage": "https://github.com/AleksandrOnis/MoviesBox-API#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
