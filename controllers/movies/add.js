@@ -9,8 +9,8 @@ const add = async (req, res, next) => {
     }
     const { _id } = req.user;
     const data = { ...req.body, owner: _id };
-    const result = await Movie.create(data);
-    res.status(201).json(result);
+    await Movie.create(data);
+    res.status(201).json(data);
   } catch (error) {
     next(error);
   }

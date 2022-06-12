@@ -8,7 +8,7 @@ const remove = async (req, res, next) => {
     if (!result) {
       throw new createError(404, "Not found");
     }
-    res.json({ message: "Movie deleted" });
+    res.json({ message: "Movie was deleted" });
   } catch (error) {
     next(error);
   }
