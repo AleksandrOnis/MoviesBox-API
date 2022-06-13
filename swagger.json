@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://proj-node-films.herokuapp.com"
+      "url": "https://moviesbox-api.herokuapp.com"
     },
     {
       "url": "http://localhost:3000"
