@@ -22,7 +22,6 @@ const movieSchema = Schema(
     },
     vote_average: {
       type: Number,
-      default: "-",
     },
     movieId: {
       type: Number,
