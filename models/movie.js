@@ -21,10 +21,10 @@ const movieSchema = Schema(
       default: "xxxx",
     },
     vote_average: {
-      type: String,
+      type: Number,
       default: "-",
     },
-    id: {
+    movieId: {
       type: String,
       required: true,
       unique: true,
@@ -47,8 +47,8 @@ const joiAddMovieSchema = Joi.object({
   poster_path: Joi.string(),
   genres_ids: Joi.array().items(Joi.number()),
   release_date: Joi.string(),
-  vote_average: Joi.string(),
-  id: Joi.string().required(),
+  vote_average: Joi.number(),
+  movieId: Joi.string().required(),
   overview: Joi.string(),
 });
 
