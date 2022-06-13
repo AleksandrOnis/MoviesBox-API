@@ -25,7 +25,7 @@ const movieSchema = Schema(
       default: "-",
     },
     movieId: {
-      type: String,
+      type: Number,
       required: true,
       unique: true,
     },
@@ -48,7 +48,7 @@ const joiAddMovieSchema = Joi.object({
   genres_ids: Joi.array().items(Joi.number()),
   release_date: Joi.string(),
   vote_average: Joi.number(),
-  movieId: Joi.string().required(),
+  movieId: Joi.number().required(),
   overview: Joi.string(),
 });
 
