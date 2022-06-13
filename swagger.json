@@ -390,8 +390,8 @@
             "example": "In his second year of fighting crime, Batman uncovers corruption in Gotham City ..."
           },
           "movieId": {
-            "type": "string",
-            "example": "62496a0a7bcc73d5fda678ec"
+            "type": "number",
+            "example": 625871
           }
         }
       }
