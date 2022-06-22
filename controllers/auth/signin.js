@@ -10,7 +10,8 @@ const signin = async (req, res, next) => {
     if (error) {
       throw new createError(400, error.message);
     }
-    const { email, password, name } = req.body;
+    const { email, password } = req.body;
+
     const user = await User.findOne({ email });
     if (!user) {
       throw new createError(401, "Email or password is wrong");
@@ -28,7 +29,7 @@ const signin = async (req, res, next) => {
       token,
       user: {
         email,
-        name,
+        name: user.name,
       },
     });
   } catch (error) {

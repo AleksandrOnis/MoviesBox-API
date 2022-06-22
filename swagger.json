@@ -363,7 +363,7 @@
             "type": "string",
             "example": "Batman"
           },
-          "genres_ids": {
+          "genre_ids": {
             "type": "array",
             "items": {
               "type": "number"
